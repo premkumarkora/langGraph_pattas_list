@@ -79,5 +79,12 @@ npm run dev
 ---
 
 ## License
-[PRIVATE_INTEL_LICENSE] - Proprietary analysis tool.
 
+> [!IMPORTANT]
+> **PRIVATE_INTEL_LICENSE**
+> 
+> This is a proprietary market intelligence architecture. Unauthorized duplication, redistribution, or modification of this neural framework is strictly prohibited.
+
+---
+
+> *"Data is the new chrome. Analyze or be analyzed."*
