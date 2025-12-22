@@ -1,9 +1,9 @@
-# PATTAS.AI // Cyberpunk Stock Intelligence Dashboard
+# PATTAS.AI Stock Intelligence Dashboard
 
 [![Next.js](https://img.shields.io/badge/Frontend-Next.js-000000?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![LangGraph](https://img.shields.io/badge/Orchestration-LangGraph-2D3748?style=for-the-badge&logo=langchain)](https://langchain-ai.github.io/langgraph/)
 [![TailwindCSS](https://img.shields.io/badge/Styling-TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![Cyberpunk](https://img.shields.io/badge/Aesthetic-Cyberpunk-FF00FF?style=for-the-badge)](https://en.wikipedia.org/wiki/Cyberpunk)
+
 
 A high-performance, AI-orchestrated stock monitoring dashboard designed with a ruthless cyberpunk aesthetic. **PATTAS.AI** leverages **LangGraph** to automate the retrieval, processing, and sentiment analysis of market intelligence, delivering real-time signals through a glassmorphic Next.js interface.
 
@@ -81,4 +81,3 @@ npm run dev
 ## License
 [PRIVATE_INTEL_LICENSE] - Proprietary analysis tool.
 
-> "Data is the new chrome. Analyze or be analyzed."
