@@ -1,11 +1,13 @@
 import { GlassCard } from './GlassCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { NewsModal } from './NewsModal';
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
+const cn = (...inputs) => {
+    return twMerge(clsx(inputs));
+}
 export function SectorSection({ sector, stocks }) {
-    const [selectedStock, setSelectedStock] = useState(null);
-
     if (!stocks || stocks.length === 0) return null;
 
     return (
@@ -25,24 +27,14 @@ export function SectorSection({ sector, stocks }) {
                     <StockCard
                         key={stock.ticker_symbol}
                         stock={stock}
-                        onViewNews={() => setSelectedStock(stock)}
                     />
                 ))}
             </div>
-
-            <AnimatePresence>
-                {selectedStock && (
-                    <NewsModal
-                        stock={selectedStock}
-                        onClose={() => setSelectedStock(null)}
-                    />
-                )}
-            </AnimatePresence>
         </div>
     );
 }
 
-function StockCard({ stock, onViewNews }) {
+function StockCard({ stock }) {
     // Status Logic
     const statusColors = {
         'BUY': 'border-neon-green text-neon-green bg-green-900/20',
@@ -52,8 +44,8 @@ function StockCard({ stock, onViewNews }) {
     const statusStyle = statusColors[stock.status] || 'border-gray-500 text-gray-400';
 
     return (
-        <GlassCard className="flex flex-col justify-between border-l-4 hover:border-l-neon-cyan transition-all duration-300 group">
-            <div>
+        <GlassCard className="flex flex-col border-l-4 hover:border-l-neon-cyan transition-all duration-300 group">
+            <div className="flex-1">
                 {/* Header */}
                 <div className="flex justify-between items-start mb-4">
                     <div>
@@ -67,65 +59,96 @@ function StockCard({ stock, onViewNews }) {
 
                 {/* Price */}
                 <div className="mb-6 flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-white tracking-tighter">₹{stock.price?.toFixed(2)}</span>
+                    <span className="text-4xl font-bold text-white tracking-tighter shadow-neon-sm">₹{stock.price?.toFixed(2)}</span>
                 </div>
 
                 {/* Main Metrics Grid */}
-                <div className="grid grid-cols-3 gap-2 text-sm font-mono mb-4">
-                    {/* RSI */}
+                <div className="grid grid-cols-3 gap-3 text-sm font-mono mb-6">
                     <MetricBox label="RSI" value={stock.rsi?.toFixed(2)}
                         color={stock.rsi > 70 ? 'text-neon-pink' : (stock.rsi < 30 ? 'text-neon-green' : 'text-white')}
                     />
-
-                    {/* MACD */}
-                    <MetricBox label="MACD" value={stock.macd_signal?.replace(' Crossover', '')}
-                        color={stock.macd_signal?.includes('Bullish') ? 'text-neon-green' : 'text-neon-pink'}
-                        smallText
+                    <MetricBox
+                        label="MACD"
+                        value={stock.macd_signal?.replace(' Crossover', '').toUpperCase()}
+                        isBadge={true}
                     />
-
-                    {/* Sentiment */}
-                    <MetricBox label="SENTIMENT" value={stock.sentiment_score !== null ? stock.sentiment_score : 'N/A'}
-                        color={stock.sentiment_score > 0 ? 'text-neon-green' : (stock.sentiment_score < 0 ? 'text-neon-pink' : 'text-white/60')}
+                    <MetricBox
+                        label="SENTIMENT"
+                        value={stock.sentiment_score !== null ?
+                            `${stock.sentiment_score > 0 ? 'BULLISH' : stock.sentiment_score < 0 ? 'BEARISH' : 'NEUTRAL'} ${stock.sentiment_score > 0 ? '+' : ''}${(stock.sentiment_score / 10).toFixed(1)}`
+                            : 'N/A'
+                        }
+                        isBadge={stock.sentiment_score !== null}
                     />
                 </div>
 
-                {/* Ownership Metrics (Promoted) */}
-                <div className="grid grid-cols-3 gap-2 text-center mb-4">
-                    <div className="bg-white/5 rounded p-1 border border-white/5">
-                        <span className="block text-[10px] text-white/40">FII</span>
-                        <span className="text-xs font-bold text-neon-cyan">{stock.fii_pct ? stock.fii_pct + '%' : '-'}</span>
+                {/* Ownership Metrics */}
+                <div className="grid grid-cols-3 gap-3 text-center mb-6">
+                    <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <span className="block text-[11px] font-bold text-white/40 mb-1">FII</span>
+                        <span className="text-sm font-black text-neon-cyan">{stock.fii_pct ? stock.fii_pct + '%' : '-'}</span>
                     </div>
-                    <div className="bg-white/5 rounded p-1 border border-white/5">
-                        <span className="block text-[10px] text-white/40">DII</span>
-                        <span className="text-xs font-bold text-neon-cyan">{stock.dii_pct ? stock.dii_pct + '%' : '-'}</span>
+                    <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <span className="block text-[11px] font-bold text-white/40 mb-1">DII</span>
+                        <span className="text-sm font-black text-neon-cyan">{stock.dii_pct ? stock.dii_pct + '%' : '-'}</span>
                     </div>
-                    <div className="bg-white/5 rounded p-1 border border-white/5">
-                        <span className="block text-[10px] text-white/40">SHP</span>
-                        <span className="text-xs font-bold text-neon-cyan">{stock.held_pct_insiders ? stock.held_pct_insiders + '%' : '-'}</span>
+                    <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <span className="block text-[11px] font-bold text-white/40 mb-1">SHP</span>
+                        <span className="text-sm font-black text-neon-cyan">{stock.held_pct_insiders ? stock.held_pct_insiders + '%' : '-'}</span>
                     </div>
                 </div>
             </div>
 
-            {/* News Button Footer */}
-            <div className="mt-2 pt-3 border-t border-white/10">
-                <button
-                    onClick={onViewNews}
-                    className="block w-full text-center text-xs font-bold text-neon-cyan/80 border border-neon-cyan/20 bg-neon-cyan/5 py-2 rounded hover:bg-neon-cyan/10 hover:border-neon-cyan/50 hover:text-neon-cyan transition-all hover:shadow-[0_0_10px_rgba(0,255,255,0.2)] tracking-wider"
-                >
-                    VIEW INTEL &gt;
-                </button>
+            {/* News Links Section */}
+            <div className="mt-2 pt-4 border-t border-white/10">
+                <div className="text-[11px] font-mono text-white/40 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse shadow-[0_0_8px_rgba(0,255,255,0.8)]" />
+                    Neural Intel Feed
+                </div>
+                <div className="space-y-2.5">
+                    {stock.news_list && stock.news_list.length > 0 ? (
+                        stock.news_list.slice(0, 5).map((news, idx) => (
+                            <a
+                                key={idx}
+                                href={news.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block text-xs text-white/70 hover:text-neon-cyan transition-all truncate font-mono bg-white/5 px-3 py-2 rounded-md border border-white/5 hover:border-neon-cyan/30 hover:bg-neon-cyan/5"
+                            >
+                                {`> `}{news.title}
+                            </a>
+                        ))
+                    ) : (
+                        <div className="text-xs text-white/20 font-mono italic px-2">NO DATA DETECTED</div>
+                    )}
+                </div>
             </div>
         </GlassCard>
     );
 }
 
-function MetricBox({ label, value, color, smallText }) {
+function MetricBox({ label, value, color, smallText, isBadge }) {
     return (
-        <div className="bg-white/5 p-2 rounded border border-white/5 flex flex-col justify-center">
-            <span className="block text-[10px] text-white/40 mb-1">{label}</span>
-            <span className={`font-bold block ${smallText ? 'text-[10px] leading-tight' : 'text-sm'} ${color}`}>
-                {value}
-            </span>
+        <div className="bg-white/5 p-3 rounded-lg border border-white/5 flex flex-col justify-center min-h-[60px]">
+            <span className="block text-[10px] font-bold text-white/30 uppercase tracking-widest mb-1">{label}</span>
+            {isBadge ? (
+                <div className={cn(
+                    "px-2 py-0.5 text-[10px] font-black border rounded-sm tracking-widest uppercase text-center inline-block w-fit mx-auto whitespace-nowrap",
+                    value.startsWith('BULLISH') ? "border-neon-green text-neon-green bg-green-950/30 shadow-[0_0_8px_rgba(57,255,20,0.3)]" :
+                        value.startsWith('BEARISH') ? "border-neon-pink text-neon-pink bg-pink-950/30 shadow-[0_0_8px_rgba(255,0,111,0.3)]" :
+                            "border-white/20 text-white/40 bg-white/5"
+                )}>
+                    {value}
+                </div>
+            ) : (
+                <span className={cn(
+                    "font-black block leading-none",
+                    smallText ? "text-xs" : "text-lg",
+                    color
+                )}>
+                    {value}
+                </span>
+            )}
         </div>
     );
 }

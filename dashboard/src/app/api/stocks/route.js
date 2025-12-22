@@ -8,6 +8,9 @@ const BASE_PATH = '/Volumes/vibecoding/pattas_list';
 const DB_PATH = path.join(BASE_PATH, 'pattas_list.db');
 const NEWS_JSON_PATH = path.join(BASE_PATH, 'news_links.json');
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
     try {
         const db = new Database(DB_PATH, { verbose: console.log });

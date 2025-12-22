@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { GlassButton } from '@/components/GlassButton';
 import { SectorSection } from '@/components/SectorSection';
+import { StockTable } from '@/components/StockTable';
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -16,8 +17,10 @@ export default function Home() {
 
   const fetchStocks = async () => {
     try {
-      // no-store to ensure we get fresh data after analysis
-      const res = await fetch('/api/stocks', { cache: 'no-store' });
+      // Clear current data to show reloading state
+      setData(null);
+      // Cache-buster to ensure fresh data from API
+      const res = await fetch(`/api/stocks?t=${Date.now()}`, { cache: 'no-store' });
       if (!res.ok) throw new Error('Failed to fetch data');
       const json = await res.json();
       setData(json.data);
@@ -129,16 +132,39 @@ export default function Home() {
           </div>
         </header>
 
-        {/* Content Grid */}
-        <div className="min-h-[500px]">
+        {/* Content Section */}
+        <div className="min-h-[500px] space-y-16">
           {!data ? (
             <div className="flex items-center justify-center h-full text-neon-cyan/50 font-mono animate-pulse">
               LOADING_DATAFEED...
             </div>
           ) : (
-            Object.entries(data).map(([sector, stocks]) => (
-              <SectorSection key={sector} sector={sector} stocks={stocks} />
-            ))
+            <>
+              {/* Master Table View */}
+              <section className="mb-20">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="h-px flex-1 bg-white/10" />
+                  <h2 className="text-sm font-mono text-neon-cyan tracking-[0.3em] uppercase whitespace-nowrap">
+                    Master Intel Index
+                  </h2>
+                  <div className="h-px flex-1 bg-white/10" />
+                </div>
+                <StockTable stocks={data} />
+              </section>
+
+              {/* Sector Sections */}
+              <div>
+                <div className="flex items-center gap-4 mb-10">
+                  <h2 className="text-sm font-mono text-neon-pink tracking-[0.3em] uppercase whitespace-nowrap">
+                    Sector Analysis
+                  </h2>
+                  <div className="h-px w-full bg-white/10" />
+                </div>
+                {Object.entries(data).map(([sector, stocks]) => (
+                  <SectorSection key={sector} sector={sector} stocks={stocks} />
+                ))}
+              </div>
+            </>
           )}
         </div>
 

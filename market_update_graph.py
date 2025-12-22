@@ -162,32 +162,26 @@ def fetch_market_data_and_technicals(state: AgentState) -> AgentState:
 def fetch_sentiment_today(state: AgentState) -> AgentState:
     """
     Fetches ONLY today's news using yfinance and calculates sentiment.
-    Also saves news links to a JSON sidecar file.
+    Also saves news lists to a JSON sidecar file.
     """
     print("--- Fetching Sentiment (Today's News) ---")
     data_list = state['processed_data']
     updated_data = []
-    news_map = {} # Ticker -> Link
+    news_map = {} # Ticker -> Link List
     
-    # Load existing news links - DISABLED to ensure freshness and correct format
-    # import json
-    # import os
-    # if os.path.exists('news_links.json'):
-    #     try:
-    #         with open('news_links.json', 'r') as f:
-    #             news_map = json.load(f)
-    #     except:
-    #         pass
+    import json
+    import os
+    import time
 
     for item in data_list:
         ticker = item['ticker']
-        print(f"Getting news for {ticker}...", flush=True) # Flush for streaming
+        print(f"Getting news for {ticker}...", flush=True)
         
         sentiment_score = None
-        news_link = None
+        polarities = []
 
         try:
-            # Fallback logic for .BO -> .NS
+            # 1. Fetch News
             search_ticker = ticker
             stock = yf.Ticker(search_ticker)
             news = stock.news
@@ -197,58 +191,80 @@ def fetch_sentiment_today(state: AgentState) -> AgentState:
                 stock = yf.Ticker(search_ticker)
                 news = stock.news
             
-            polarities = []
-            
-            # Process News
+            # 2. Process News List for Modal
             if news:
                 news_items = []
-                for news_item in news[:5]: # Top 5 items
+                for news_item in news[:5]: # Top 5
+                    # yfinance news can have info at top level or nested in 'content'
+                    c = news_item.get('content', news_item)
                     link = None
-                    if 'link' in news_item:
-                         link = news_item['link']
-                    elif 'clickThroughUrl' in news_item and news_item['clickThroughUrl']:
-                         link = news_item['clickThroughUrl'].get('url')
-                    elif 'canonicalUrl' in news_item and news_item['canonicalUrl']:
-                         link = news_item['canonicalUrl'].get('url')
                     
+                    # Try to find link
+                    if 'link' in c:
+                        link = c['link']
+                    elif 'clickThroughUrl' in c and c['clickThroughUrl']:\
+                        link = c['clickThroughUrl'].get('url')
+                    elif 'canonicalUrl' in c and c['canonicalUrl']:
+                        link = c['canonicalUrl'].get('url')
+                    
+                    if not link and 'link' in news_item: # last resort top level
+                         link = news_item['link']
+                         
                     if link:
                         news_items.append({
-                            "title": news_item.get('title', 'No Title'),
+                            "title": c.get('title', 'No Title'),
                             "link": link,
-                            "publisher": news_item.get('provider', {}).get('displayName', 'Unknown'),
-                            "time": news_item.get('providerPublishTime', 0)
+                            "publisher": c.get('provider', {}).get('displayName', 'Unknown') or news_item.get('provider', {}).get('displayName', 'Unknown'),
+                            "time": c.get('pubDate') or c.get('providerPublishTime') or int(time.time()),
+                            "summary": c.get('summary') or c.get('description') or "No summary available for this intelligence report."
                         })
                 
                 if news_items:
                     news_map[ticker] = news_items
 
-            # FALLBACK
-            if ticker not in news_map:
-                 safe_ticker = ticker.replace('.BO', '').replace('.NS', '')
-                 fallback_link = f"https://www.google.com/search?q={safe_ticker}+share+news&tbm=nws"
-                 news_map[ticker] = [{
-                     "title": f"Latest News Search: {safe_ticker}",
-                     "link": fallback_link,
-                     "publisher": "Google News",
-                     "time": int(time.time())
-                 }]
-
-            # Sentiment Calculation
-            if news:
-                for news_item in news:
-                    title = news_item.get('title', '')
-                    if not title and 'content' in news_item:
-                         title = news_item['content'].get('title', '')
+                # 3. Process Sentiment
+                polarities = []
+                for ni in news:
+                    # Traversal: check top level, then check nested 'content'
+                    c = ni.get('content', ni)
+                    title = c.get('title') or ni.get('title')
+                    summary = c.get('summary') or c.get('description') or ni.get('summary')
                     
-                    if title:
-                        blob = TextBlob(title)
+                    text_to_analyze = ""
+                    if title: text_to_analyze += title + ". "
+                    if summary: text_to_analyze += summary
+                    
+                    if text_to_analyze.strip():
+                        blob = TextBlob(text_to_analyze)
                         polarities.append(blob.sentiment.polarity)
             
+            if polarities:
+                # Scale from -1.0/1.0 to -100%/100%
+                sentiment_score = round((sum(polarities) / len(polarities)) * 100, 2)
+            else:
+                # If news exists but no titles found (fallback)
+                sentiment_score = 0.0
+
         except Exception as e:
              print(f"  Sentiment error for {ticker}: {e}", flush=True)
+
+        # 4. FINAL FALLBACK: If news_map doesn't have this ticker yet (fail or no links)
+        if ticker not in news_map:
+             import urllib.parse
+             safe_ticker = ticker.replace('.BO', '').replace('.NS', '')
+             quoted_ticker = urllib.parse.quote(f"{safe_ticker} share news")
+             fallback_link = f"https://www.google.com/search?q={quoted_ticker}&tbm=nws"
+             news_map[ticker] = [{
+                 "title": f"Search Intel: {safe_ticker}",
+                 "link": fallback_link,
+                 "publisher": "Google News Search",
+                 "time": int(time.time()),
+                 "summary": f"No direct news feed detected for {safe_ticker}. This fallback link will execute a secure search for the latest market intelligence on Google News."
+             }]
         
         item['sentiment_score'] = sentiment_score
         updated_data.append(item)
+        time.sleep(0.3) # Throttle 
     
     # Save News Links to Sidecar JSON
     try:

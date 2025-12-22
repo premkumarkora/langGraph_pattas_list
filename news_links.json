@@ -1,49 +1,425 @@
 {
-  "ABCAPITAL.BO": "https://www.google.com/search?q=ABCAPITAL+share+news&tbm=nws",
-  "ARE&M.BO": "https://www.google.com/search?q=ARE&M+share+news&tbm=nws",
-  "BAJAJ-AUTO.BO": "https://www.google.com/search?q=BAJAJ-AUTO+share+news&tbm=nws",
-  "BIOCON.BO": "https://www.google.com/search?q=BIOCON+share+news&tbm=nws",
-  "CIPLA.BO": "https://www.google.com/search?q=CIPLA+share+news&tbm=nws",
-  "COSMOFIRST.BO": "https://www.google.com/search?q=COSMOFIRST+share+news&tbm=nws",
-  "CUB.BO": "https://www.google.com/search?q=CUB+share+news&tbm=nws",
-  "DRREDDY.BO": "https://www.google.com/search?q=DRREDDY+share+news&tbm=nws",
-  "EXIDEIND.BO": "https://www.google.com/search?q=EXIDEIND+share+news&tbm=nws",
-  "FEDERALBNK.BO": "https://www.google.com/search?q=FEDERALBNK+share+news&tbm=nws",
-  "HCLTECH.BO": "https://www.google.com/search?q=HCLTECH+share+news&tbm=nws",
-  "HDFCBANK.BO": "https://www.google.com/search?q=HDFCBANK+share+news&tbm=nws",
-  "HEROMOTOCO.BO": "https://www.google.com/search?q=HEROMOTOCO+share+news&tbm=nws",
-  "HINDUNILVR.BO": "https://www.google.com/search?q=HINDUNILVR+share+news&tbm=nws",
-  "ICICIBANK.BO": "https://www.google.com/search?q=ICICIBANK+share+news&tbm=nws",
-  "IDFCFIRSTB.BO": "https://www.google.com/search?q=IDFCFIRSTB+share+news&tbm=nws",
-  "INDUSINDBK.BO": "https://www.google.com/search?q=INDUSINDBK+share+news&tbm=nws",
-  "INFY.BO": "https://www.google.com/search?q=INFY+share+news&tbm=nws",
-  "ITC.BO": "https://www.google.com/search?q=ITC+share+news&tbm=nws",
-  "JYOTHYLAB.BO": "https://www.google.com/search?q=JYOTHYLAB+share+news&tbm=nws",
-  "KALYANKJIL.BO": "https://www.google.com/search?q=KALYANKJIL+share+news&tbm=nws",
-  "KTKBANK.BO": "https://www.google.com/search?q=KTKBANK+share+news&tbm=nws",
-  "LT.BO": "https://www.google.com/search?q=LT+share+news&tbm=nws",
-  "LTF.BO": "https://www.google.com/search?q=LTF+share+news&tbm=nws",
-  "M&M.BO": "https://www.google.com/search?q=M&M+share+news&tbm=nws",
-  "MANAPPURAM.BO": "https://www.google.com/search?q=MANAPPURAM+share+news&tbm=nws",
-  "MUTHOOTFIN.BO": "https://www.google.com/search?q=MUTHOOTFIN+share+news&tbm=nws",
-  "NATCOPHARM.BO": "https://www.google.com/search?q=NATCOPHARM+share+news&tbm=nws",
-  "PETRONET.BO": "https://www.google.com/search?q=PETRONET+share+news&tbm=nws",
-  "PGINVIT.BO": "https://www.google.com/search?q=PGINVIT+share+news&tbm=nws",
-  "POWERGRID.BO": "https://www.google.com/search?q=POWERGRID+share+news&tbm=nws",
-  "RELIANCE.BO": "https://www.google.com/search?q=RELIANCE+share+news&tbm=nws",
-  "SOUTHBANK.BO": "https://www.google.com/search?q=SOUTHBANK+share+news&tbm=nws",
-  "STOVEKRAFT.BO": "https://www.google.com/search?q=STOVEKRAFT+share+news&tbm=nws",
-  "SUNPHARMA.BO": "https://www.google.com/search?q=SUNPHARMA+share+news&tbm=nws",
-  "TATACHEM.BO": "https://www.google.com/search?q=TATACHEM+share+news&tbm=nws",
-  "TATAINVEST.BO": "https://www.google.com/search?q=TATAINVEST+share+news&tbm=nws",
-  "TATAMOTORS.BO": "https://www.google.com/search?q=TATAMOTORS+share+news&tbm=nws",
-  "TATASTEEL.BO": "https://www.google.com/search?q=TATASTEEL+share+news&tbm=nws",
-  "TCS.BO": "https://www.google.com/search?q=TCS+share+news&tbm=nws",
-  "TECHM.BO": "https://www.google.com/search?q=TECHM+share+news&tbm=nws",
-  "THANGAMAYL.BO": "https://www.google.com/search?q=THANGAMAYL+share+news&tbm=nws",
-  "TITAN.BO": "https://www.google.com/search?q=TITAN+share+news&tbm=nws",
-  "TMB.BO": "https://www.google.com/search?q=TMB+share+news&tbm=nws",
-  "TTKPRESTIG.BO": "https://www.google.com/search?q=TTKPRESTIG+share+news&tbm=nws",
-  "WIPRO.BO": "https://www.google.com/search?q=WIPRO+share+news&tbm=nws",
-  "ZYDUSLIFE.BO": "https://www.google.com/search?q=ZYDUSLIFE+share+news&tbm=nws"
+  "ABCAPITAL.BO": [
+    {
+      "title": "Search Intel: ABCAPITAL",
+      "link": "https://www.google.com/search?q=ABCAPITAL%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412705,
+      "summary": "No direct news feed detected for ABCAPITAL. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "ARE&M.BO": [
+    {
+      "title": "Search Intel: ARE&M",
+      "link": "https://www.google.com/search?q=ARE%26M%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412706,
+      "summary": "No direct news feed detected for ARE&M. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "BAJAJ-AUTO.BO": [
+    {
+      "title": "Search Intel: BAJAJ-AUTO",
+      "link": "https://www.google.com/search?q=BAJAJ-AUTO%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412706,
+      "summary": "No direct news feed detected for BAJAJ-AUTO. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "BIOCON.BO": [
+    {
+      "title": "Search Intel: BIOCON",
+      "link": "https://www.google.com/search?q=BIOCON%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412707,
+      "summary": "No direct news feed detected for BIOCON. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "CIPLA.BO": [
+    {
+      "title": "Search Intel: CIPLA",
+      "link": "https://www.google.com/search?q=CIPLA%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412707,
+      "summary": "No direct news feed detected for CIPLA. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "COSMOFIRST.BO": [
+    {
+      "title": "Search Intel: COSMOFIRST",
+      "link": "https://www.google.com/search?q=COSMOFIRST%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412708,
+      "summary": "No direct news feed detected for COSMOFIRST. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "CUB.BO": [
+    {
+      "title": "Search Intel: CUB",
+      "link": "https://www.google.com/search?q=CUB%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412708,
+      "summary": "No direct news feed detected for CUB. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "DRREDDY.BO": [
+    {
+      "title": "Search Intel: DRREDDY",
+      "link": "https://www.google.com/search?q=DRREDDY%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412709,
+      "summary": "No direct news feed detected for DRREDDY. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "EXIDEIND.BO": [
+    {
+      "title": "Search Intel: EXIDEIND",
+      "link": "https://www.google.com/search?q=EXIDEIND%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412714,
+      "summary": "No direct news feed detected for EXIDEIND. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "FEDERALBNK.BO": [
+    {
+      "title": "Search Intel: FEDERALBNK",
+      "link": "https://www.google.com/search?q=FEDERALBNK%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412714,
+      "summary": "No direct news feed detected for FEDERALBNK. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "HCLTECH.BO": [
+    {
+      "title": "Search Intel: HCLTECH",
+      "link": "https://www.google.com/search?q=HCLTECH%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412715,
+      "summary": "No direct news feed detected for HCLTECH. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "HDFCBANK.BO": [
+    {
+      "title": "Search Intel: HDFCBANK",
+      "link": "https://www.google.com/search?q=HDFCBANK%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412715,
+      "summary": "No direct news feed detected for HDFCBANK. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "HEROMOTOCO.BO": [
+    {
+      "title": "Search Intel: HEROMOTOCO",
+      "link": "https://www.google.com/search?q=HEROMOTOCO%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412716,
+      "summary": "No direct news feed detected for HEROMOTOCO. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "HINDUNILVR.BO": [
+    {
+      "title": "Search Intel: HINDUNILVR",
+      "link": "https://www.google.com/search?q=HINDUNILVR%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412716,
+      "summary": "No direct news feed detected for HINDUNILVR. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "ICICIBANK.BO": [
+    {
+      "title": "Search Intel: ICICIBANK",
+      "link": "https://www.google.com/search?q=ICICIBANK%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412717,
+      "summary": "No direct news feed detected for ICICIBANK. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "IDFCFIRSTB.BO": [
+    {
+      "title": "Search Intel: IDFCFIRSTB",
+      "link": "https://www.google.com/search?q=IDFCFIRSTB%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412717,
+      "summary": "No direct news feed detected for IDFCFIRSTB. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "INDUSINDBK.BO": [
+    {
+      "title": "Search Intel: INDUSINDBK",
+      "link": "https://www.google.com/search?q=INDUSINDBK%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412718,
+      "summary": "No direct news feed detected for INDUSINDBK. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "INFY.BO": [
+    {
+      "title": "Search Intel: INFY",
+      "link": "https://www.google.com/search?q=INFY%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412718,
+      "summary": "No direct news feed detected for INFY. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "ITC.BO": [
+    {
+      "title": "Search Intel: ITC",
+      "link": "https://www.google.com/search?q=ITC%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412719,
+      "summary": "No direct news feed detected for ITC. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "JYOTHYLAB.BO": [
+    {
+      "title": "Search Intel: JYOTHYLAB",
+      "link": "https://www.google.com/search?q=JYOTHYLAB%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412719,
+      "summary": "No direct news feed detected for JYOTHYLAB. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "KALYANKJIL.BO": [
+    {
+      "title": "Search Intel: KALYANKJIL",
+      "link": "https://www.google.com/search?q=KALYANKJIL%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412720,
+      "summary": "No direct news feed detected for KALYANKJIL. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "KTKBANK.BO": [
+    {
+      "title": "Search Intel: KTKBANK",
+      "link": "https://www.google.com/search?q=KTKBANK%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412720,
+      "summary": "No direct news feed detected for KTKBANK. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "LT.BO": [
+    {
+      "title": "Search Intel: LT",
+      "link": "https://www.google.com/search?q=LT%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412721,
+      "summary": "No direct news feed detected for LT. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "LTF.BO": [
+    {
+      "title": "Search Intel: LTF",
+      "link": "https://www.google.com/search?q=LTF%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412721,
+      "summary": "No direct news feed detected for LTF. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "M&M.BO": [
+    {
+      "title": "Search Intel: M&M",
+      "link": "https://www.google.com/search?q=M%26M%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412722,
+      "summary": "No direct news feed detected for M&M. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "MANAPPURAM.BO": [
+    {
+      "title": "Search Intel: MANAPPURAM",
+      "link": "https://www.google.com/search?q=MANAPPURAM%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412722,
+      "summary": "No direct news feed detected for MANAPPURAM. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "MUTHOOTFIN.BO": [
+    {
+      "title": "Search Intel: MUTHOOTFIN",
+      "link": "https://www.google.com/search?q=MUTHOOTFIN%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412723,
+      "summary": "No direct news feed detected for MUTHOOTFIN. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "NATCOPHARM.BO": [
+    {
+      "title": "Search Intel: NATCOPHARM",
+      "link": "https://www.google.com/search?q=NATCOPHARM%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412723,
+      "summary": "No direct news feed detected for NATCOPHARM. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "PETRONET.BO": [
+    {
+      "title": "Search Intel: PETRONET",
+      "link": "https://www.google.com/search?q=PETRONET%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412724,
+      "summary": "No direct news feed detected for PETRONET. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "PGINVIT.BO": [
+    {
+      "title": "Search Intel: PGINVIT",
+      "link": "https://www.google.com/search?q=PGINVIT%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412724,
+      "summary": "No direct news feed detected for PGINVIT. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "POWERGRID.BO": [
+    {
+      "title": "Search Intel: POWERGRID",
+      "link": "https://www.google.com/search?q=POWERGRID%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412725,
+      "summary": "No direct news feed detected for POWERGRID. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "RELIANCE.BO": [
+    {
+      "title": "Search Intel: RELIANCE",
+      "link": "https://www.google.com/search?q=RELIANCE%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412726,
+      "summary": "No direct news feed detected for RELIANCE. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "SOUTHBANK.BO": [
+    {
+      "title": "Search Intel: SOUTHBANK",
+      "link": "https://www.google.com/search?q=SOUTHBANK%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412726,
+      "summary": "No direct news feed detected for SOUTHBANK. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "STOVEKRAFT.BO": [
+    {
+      "title": "Search Intel: STOVEKRAFT",
+      "link": "https://www.google.com/search?q=STOVEKRAFT%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412727,
+      "summary": "No direct news feed detected for STOVEKRAFT. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "SUNPHARMA.BO": [
+    {
+      "title": "Search Intel: SUNPHARMA",
+      "link": "https://www.google.com/search?q=SUNPHARMA%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412727,
+      "summary": "No direct news feed detected for SUNPHARMA. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TATACHEM.BO": [
+    {
+      "title": "Search Intel: TATACHEM",
+      "link": "https://www.google.com/search?q=TATACHEM%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412728,
+      "summary": "No direct news feed detected for TATACHEM. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TATAINVEST.BO": [
+    {
+      "title": "Search Intel: TATAINVEST",
+      "link": "https://www.google.com/search?q=TATAINVEST%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412728,
+      "summary": "No direct news feed detected for TATAINVEST. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TATAMOTORS.BO": [
+    {
+      "title": "Search Intel: TATAMOTORS",
+      "link": "https://www.google.com/search?q=TATAMOTORS%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412729,
+      "summary": "No direct news feed detected for TATAMOTORS. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TATASTEEL.BO": [
+    {
+      "title": "Search Intel: TATASTEEL",
+      "link": "https://www.google.com/search?q=TATASTEEL%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412729,
+      "summary": "No direct news feed detected for TATASTEEL. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TCS.BO": [
+    {
+      "title": "Search Intel: TCS",
+      "link": "https://www.google.com/search?q=TCS%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412730,
+      "summary": "No direct news feed detected for TCS. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TECHM.BO": [
+    {
+      "title": "Search Intel: TECHM",
+      "link": "https://www.google.com/search?q=TECHM%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412730,
+      "summary": "No direct news feed detected for TECHM. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "THANGAMAYL.BO": [
+    {
+      "title": "Search Intel: THANGAMAYL",
+      "link": "https://www.google.com/search?q=THANGAMAYL%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412731,
+      "summary": "No direct news feed detected for THANGAMAYL. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TITAN.BO": [
+    {
+      "title": "Search Intel: TITAN",
+      "link": "https://www.google.com/search?q=TITAN%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412731,
+      "summary": "No direct news feed detected for TITAN. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TMB.BO": [
+    {
+      "title": "Search Intel: TMB",
+      "link": "https://www.google.com/search?q=TMB%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412732,
+      "summary": "No direct news feed detected for TMB. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "TTKPRESTIG.BO": [
+    {
+      "title": "Search Intel: TTKPRESTIG",
+      "link": "https://www.google.com/search?q=TTKPRESTIG%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412732,
+      "summary": "No direct news feed detected for TTKPRESTIG. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "WIPRO.BO": [
+    {
+      "title": "Search Intel: WIPRO",
+      "link": "https://www.google.com/search?q=WIPRO%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412733,
+      "summary": "No direct news feed detected for WIPRO. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ],
+  "ZYDUSLIFE.BO": [
+    {
+      "title": "Search Intel: ZYDUSLIFE",
+      "link": "https://www.google.com/search?q=ZYDUSLIFE%20share%20news&tbm=nws",
+      "publisher": "Google News Search",
+      "time": 1766412733,
+      "summary": "No direct news feed detected for ZYDUSLIFE. This fallback link will execute a secure search for the latest market intelligence on Google News."
+    }
+  ]
 }
