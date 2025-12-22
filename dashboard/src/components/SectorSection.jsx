@@ -1,11 +1,15 @@
 import { GlassCard } from './GlassCard';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { NewsModal } from './NewsModal';
 
 export function SectorSection({ sector, stocks }) {
+    const [selectedStock, setSelectedStock] = useState(null);
+
     if (!stocks || stocks.length === 0) return null;
 
     return (
-        <div className="mb-16">
+        <div className="mb-16 relative">
             <motion.h2
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -18,14 +22,27 @@ export function SectorSection({ sector, stocks }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {stocks.map((stock) => (
-                    <StockCard key={stock.ticker_symbol} stock={stock} />
+                    <StockCard
+                        key={stock.ticker_symbol}
+                        stock={stock}
+                        onViewNews={() => setSelectedStock(stock)}
+                    />
                 ))}
             </div>
+
+            <AnimatePresence>
+                {selectedStock && (
+                    <NewsModal
+                        stock={selectedStock}
+                        onClose={() => setSelectedStock(null)}
+                    />
+                )}
+            </AnimatePresence>
         </div>
     );
 }
 
-function StockCard({ stock }) {
+function StockCard({ stock, onViewNews }) {
     // Status Logic
     const statusColors = {
         'BUY': 'border-neon-green text-neon-green bg-green-900/20',
@@ -89,22 +106,14 @@ function StockCard({ stock }) {
                 </div>
             </div>
 
-            {/* News Link Footer */}
+            {/* News Button Footer */}
             <div className="mt-2 pt-3 border-t border-white/10">
-                {stock.news_link ? (
-                    <a
-                        href={stock.news_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block w-full text-center text-xs font-bold text-neon-green border border-neon-green/30 bg-neon-green/10 py-2 rounded hover:bg-neon-green/20 transition-all hover:shadow-[0_0_10px_rgba(57,255,20,0.3)] animate-pulse"
-                    >
-                        READ NEWS &gt;
-                    </a>
-                ) : (
-                    <div className="block w-full text-center text-xs font-bold text-white/20 border border-white/10 py-2 rounded cursor-not-allowed">
-                        NO RECENT NEWS
-                    </div>
-                )}
+                <button
+                    onClick={onViewNews}
+                    className="block w-full text-center text-xs font-bold text-neon-cyan/80 border border-neon-cyan/20 bg-neon-cyan/5 py-2 rounded hover:bg-neon-cyan/10 hover:border-neon-cyan/50 hover:text-neon-cyan transition-all hover:shadow-[0_0_10px_rgba(0,255,255,0.2)] tracking-wider"
+                >
+                    VIEW INTEL &gt;
+                </button>
             </div>
         </GlassCard>
     );

@@ -63,8 +63,22 @@ export async function GET() {
                 acc[sector] = [];
             }
 
-            // Inject News Link
-            row.news_link = newsMap[row.ticker_symbol] || null;
+            // Inject News List (Handle both Array and Legacy String formats)
+            const newsData = newsMap[row.ticker_symbol];
+
+            if (Array.isArray(newsData)) {
+                row.news_list = newsData;
+            } else if (typeof newsData === 'string') {
+                // Legacy support for when we just stored a URL string
+                row.news_list = [{
+                    title: "Latest News",
+                    link: newsData,
+                    publisher: "External",
+                    time: Date.now() / 1000
+                }];
+            } else {
+                row.news_list = [];
+            }
 
             acc[sector].push(row);
             return acc;

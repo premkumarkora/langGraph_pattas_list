@@ -169,16 +169,15 @@ def fetch_sentiment_today(state: AgentState) -> AgentState:
     updated_data = []
     news_map = {} # Ticker -> Link
     
-    # Load existing news links if file exists to preserve history if needed
-    # But for "latest news", overwriting is fine or merging. Let's merge.
-    import json
-    import os
-    if os.path.exists('news_links.json'):
-        try:
-            with open('news_links.json', 'r') as f:
-                news_map = json.load(f)
-        except:
-            pass
+    # Load existing news links - DISABLED to ensure freshness and correct format
+    # import json
+    # import os
+    # if os.path.exists('news_links.json'):
+    #     try:
+    #         with open('news_links.json', 'r') as f:
+    #             news_map = json.load(f)
+    #     except:
+    #         pass
 
     for item in data_list:
         ticker = item['ticker']
@@ -202,28 +201,40 @@ def fetch_sentiment_today(state: AgentState) -> AgentState:
             
             # Process News
             if news:
-                # Iterate through news items to find the first valid link
-                for news_item in news:
-                    # Check for link in various locations
+                news_items = []
+                for news_item in news[:5]: # Top 5 items
+                    link = None
                     if 'link' in news_item:
-                        news_link = news_item['link']
+                         link = news_item['link']
                     elif 'clickThroughUrl' in news_item and news_item['clickThroughUrl']:
-                        news_link = news_item['clickThroughUrl'].get('url')
+                         link = news_item['clickThroughUrl'].get('url')
                     elif 'canonicalUrl' in news_item and news_item['canonicalUrl']:
-                        news_link = news_item['canonicalUrl'].get('url')
+                         link = news_item['canonicalUrl'].get('url')
                     
-                    # If we found a link, stop looking for one
-                    if news_link:
-                        break
-            
-            # FALLBACK: If yfinance URL extraction fails, construct Google News Search URL
-            if not news_link:
+                    if link:
+                        news_items.append({
+                            "title": news_item.get('title', 'No Title'),
+                            "link": link,
+                            "publisher": news_item.get('provider', {}).get('displayName', 'Unknown'),
+                            "time": news_item.get('providerPublishTime', 0)
+                        })
+                
+                if news_items:
+                    news_map[ticker] = news_items
+
+            # FALLBACK
+            if ticker not in news_map:
                  safe_ticker = ticker.replace('.BO', '').replace('.NS', '')
-                 news_link = f"https://www.google.com/search?q={safe_ticker}+share+news&tbm=nws"
-            
-            # Continue with sentiment calculation
+                 fallback_link = f"https://www.google.com/search?q={safe_ticker}+share+news&tbm=nws"
+                 news_map[ticker] = [{
+                     "title": f"Latest News Search: {safe_ticker}",
+                     "link": fallback_link,
+                     "publisher": "Google News",
+                     "time": int(time.time())
+                 }]
+
+            # Sentiment Calculation
             if news:
-                # Calculate sentiment from all titles as before
                 for news_item in news:
                     title = news_item.get('title', '')
                     if not title and 'content' in news_item:
@@ -232,13 +243,6 @@ def fetch_sentiment_today(state: AgentState) -> AgentState:
                     if title:
                         blob = TextBlob(title)
                         polarities.append(blob.sentiment.polarity)
-            
-            if polarities:
-                sentiment_score = round(sum(polarities) / len(polarities), 4)
-
-            # Update News Map
-            if news_link:
-                news_map[ticker] = news_link
             
         except Exception as e:
              print(f"  Sentiment error for {ticker}: {e}", flush=True)
