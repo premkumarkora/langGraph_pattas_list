@@ -41,7 +41,7 @@
       "title": "Search Intel: ARE&M",
       "link": "https://www.google.com/search?q=ARE%26M%20share%20news&tbm=nws",
       "publisher": "Google News Search",
-      "time": 1766413052,
+      "time": 1766449774,
       "summary": "No direct news feed detected for ARE&M. This fallback link will execute a secure search for the latest market intelligence on Google News."
     }
   ],
@@ -414,6 +414,13 @@
   ],
   "ICICIBANK.BO": [
     {
+      "title": "Top Analyst Reports for Eli Lilly, Shell & ICICI Bank",
+      "link": "https://finance.yahoo.com/news/top-analyst-reports-eli-lilly-221400231.html",
+      "publisher": "Zacks",
+      "time": "2025-12-22T22:14:00Z",
+      "summary": "LLY's strong GLP-1 demand, international launches and new drug contributions highlight why it leads today's top analyst reports lineup."
+    },
+    {
       "title": "Asian Equities Traded in the US as American Depositary Receipts Rise Sharply in Thursday Trading",
       "link": "https://finance.yahoo.com/news/asian-equities-traded-us-american-154109181.html",
       "publisher": "MT Newswires",
@@ -440,13 +447,6 @@
       "publisher": "Zacks",
       "time": "2025-12-11T20:00:00Z",
       "summary": "IBN, TSM and MELI stand out as emerging-market plays as stronger growth, cheaper valuations and sector tailwinds set the stage for 2026 momentum."
-    },
-    {
-      "title": "TD vs. IBN: Which Stock Is the Better Value Option?",
-      "link": "https://finance.yahoo.com/news/td-vs-ibn-stock-better-164002938.html",
-      "publisher": "Zacks",
-      "time": "2025-12-09T16:40:02Z",
-      "summary": "TD vs. IBN: Which Stock Is the Better Value Option?"
     }
   ],
   "IDFCFIRSTB.BO": [
@@ -659,11 +659,18 @@
       "title": "Search Intel: LTF",
       "link": "https://www.google.com/search?q=LTF%20share%20news&tbm=nws",
       "publisher": "Google News Search",
-      "time": 1766413065,
+      "time": 1766449785,
       "summary": "No direct news feed detected for LTF. This fallback link will execute a secure search for the latest market intelligence on Google News."
     }
   ],
   "M&M.BO": [
+    {
+      "title": "Reasons Why You Should Retain Aptiv Stock in Your Portfolio",
+      "link": "https://finance.yahoo.com/news/reasons-why-retain-aptiv-stock-163000591.html",
+      "publisher": "Zacks",
+      "time": "2025-12-22T16:30:00Z",
+      "summary": "APTV shares outpace the industry as earnings and revenue growth expectations build, supported by new ADAS launches, software deals and solid liquidity."
+    },
     {
       "title": "Kraft Heinz taps former Kellogg chief as its CEO as it prepares to split into 2 companies",
       "link": "https://finance.yahoo.com/news/kraft-heinz-taps-former-kellogg-172357865.html",
@@ -691,13 +698,6 @@
       "publisher": "Reuters",
       "time": "2025-11-30T23:29:51Z",
       "summary": "By Aditi Shah NEW DELHI, Nov 28 (Reuters) - India's biggest carmakers including Tata Motors and Hyundai want the government to scrap a weight-based emission concession for small cars under planned new"
-    },
-    {
-      "title": "India's Mahindra accelerates EV push with new electric SUV launch",
-      "link": "https://finance.yahoo.com/news/indias-mahindra-accelerates-ev-push-103540773.html",
-      "publisher": "Reuters",
-      "time": "2025-11-27T10:35:40Z",
-      "summary": "By Meenakshi Maidas and Urvi Dugar BENGALURU (Reuters) - India's Mahindra launched a seven-seater electric SUV on Thursday with a starting price of around 2 million rupees ($22,409), as it eyes a"
     }
   ],
   "MANAPPURAM.BO": [
@@ -839,7 +839,7 @@
       "title": "Search Intel: PGINVIT",
       "link": "https://www.google.com/search?q=PGINVIT%20share%20news&tbm=nws",
       "publisher": "Google News Search",
-      "time": 1766413068,
+      "time": 1766449788,
       "summary": "No direct news feed detected for PGINVIT. This fallback link will execute a secure search for the latest market intelligence on Google News."
     }
   ],
@@ -922,7 +922,7 @@
       "title": "Search Intel: SOUTHBANK",
       "link": "https://www.google.com/search?q=SOUTHBANK%20share%20news&tbm=nws",
       "publisher": "Google News Search",
-      "time": 1766413070,
+      "time": 1766449790,
       "summary": "No direct news feed detected for SOUTHBANK. This fallback link will execute a secure search for the latest market intelligence on Google News."
     }
   ],
@@ -931,7 +931,7 @@
       "title": "Search Intel: STOVEKRAFT",
       "link": "https://www.google.com/search?q=STOVEKRAFT%20share%20news&tbm=nws",
       "publisher": "Google News Search",
-      "time": 1766413070,
+      "time": 1766449791,
       "summary": "No direct news feed detected for STOVEKRAFT. This fallback link will execute a secure search for the latest market intelligence on Google News."
     }
   ],
@@ -1157,7 +1157,7 @@
       "title": "Search Intel: THANGAMAYL",
       "link": "https://www.google.com/search?q=THANGAMAYL%20share%20news&tbm=nws",
       "publisher": "Google News Search",
-      "time": 1766413075,
+      "time": 1766449795,
       "summary": "No direct news feed detected for THANGAMAYL. This fallback link will execute a secure search for the latest market intelligence on Google News."
     }
   ],
@@ -1189,7 +1189,7 @@
       "title": "Search Intel: TMB",
       "link": "https://www.google.com/search?q=TMB%20share%20news&tbm=nws",
       "publisher": "Google News Search",
-      "time": 1766413076,
+      "time": 1766449796,
       "summary": "No direct news feed detected for TMB. This fallback link will execute a secure search for the latest market intelligence on Google News."
     }
   ],
@@ -1225,6 +1225,13 @@
   ],
   "WIPRO.BO": [
     {
+      "title": "Are CrowdStrike's Expanding Partnerships a Catalyst for Future Growth?",
+      "link": "https://finance.yahoo.com/news/crowdstrikes-expanding-partnerships-catalyst-future-150500990.html",
+      "publisher": "Zacks",
+      "time": "2025-12-22T15:05:00Z",
+      "summary": "CRWD is leaning on expanding partnerships to drive larger deals, faster Falcon adoption and broader customer reach."
+    },
+    {
       "title": "Stock Market Today, Dec. 19: NYSE Halts Infosys Trading After ADRs Spike",
       "link": "https://finance.yahoo.com/news/stock-market-today-dec-19-230204325.html",
       "publisher": "Motley Fool",
@@ -1251,16 +1258,16 @@
       "publisher": "MT Newswires",
       "time": "2025-12-17T15:56:09Z",
       "summary": "Asian equities traded in the US as American depositary receipts were lower Wednesday morning, declin"
-    },
-    {
-      "title": "Asian Equities Traded in the US as American Depositary Receipts Little Changed in Monday Trading",
-      "link": "https://finance.yahoo.com/news/asian-equities-traded-us-american-153745171.html",
-      "publisher": "MT Newswires",
-      "time": "2025-12-15T15:37:45Z",
-      "summary": "Asian equities traded in the US as American depositary receipts started the week little changed Mond"
     }
   ],
   "ZYDUSLIFE.BO": [
+    {
+      "title": "Myriad Genetics (MYGN) Stock Trades Up, Here Is Why",
+      "link": "https://finance.yahoo.com/news/myriad-genetics-mygn-stock-trades-200145990.html",
+      "publisher": "StockStory",
+      "time": "2025-12-22T20:01:45Z",
+      "summary": "Shares of genetic testing company Myriad Genetics (NASDAQ:MYGN) jumped 3.7% in the afternoon session after the company signed an exclusive agreement with Zydus Lifesciences to commercialize a trio of its cancer tests in India."
+    },
     {
       "title": "Formycon and Zydus sign exclusive agreement for FYB206 supply",
       "link": "https://finance.yahoo.com/news/formycon-zydus-sign-exclusive-agreement-110708711.html",
